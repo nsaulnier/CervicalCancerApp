@@ -49,7 +49,17 @@ public class StartScreen extends Activity {
         //set the closeApp onClickListener
         View.OnClickListener closeAppHandler = new View.OnClickListener() {
             public void onClick(View v) {
-                // close app
+                // note that this does not actually kill the process, it simply returns the user to the home screen
+
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+                //android.os.Process.killProcess(android.os.Process.myPid());
+                //System.exit(1);
+
+                //finish();
             }
 
         };
