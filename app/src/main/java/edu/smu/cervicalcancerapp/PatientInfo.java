@@ -19,6 +19,15 @@ public class PatientInfo extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_info);
 
+        // retrieve patient info
+        Intent intent = getIntent();
+        String firstName = intent.getStringExtra("firstName");
+        String lastName = intent.getStringExtra("lastName");
+        String dob = intent.getStringExtra("dob");
+
+        //Rebecca insert code here
+        // use patient info to setup tabs
+
         // setup the tabs
         TabHost th = (TabHost) findViewById(android.R.id.tabhost);
         th.setup();
